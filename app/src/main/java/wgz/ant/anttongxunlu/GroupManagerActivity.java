@@ -6,6 +6,7 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class GroupManagerActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle("分组管理");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         init();
     }
 
@@ -69,5 +71,14 @@ public class GroupManagerActivity extends AppCompatActivity {
         //设置返回数据
         setResult(RESULT_OK, intent);
         super.finish();
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId()== android.R.id.home){
+            finish();
+            return true;
+
+        }
+        return onOptionsItemSelected(item);
     }
 }

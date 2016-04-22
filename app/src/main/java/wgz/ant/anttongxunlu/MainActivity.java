@@ -1,5 +1,6 @@
 package wgz.ant.anttongxunlu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -118,6 +119,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            startActivityForResult(new Intent(MainActivity.this, GroupManagerActivity.class), 0);
             return true;
         }
 
